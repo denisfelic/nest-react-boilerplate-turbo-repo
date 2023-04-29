@@ -1,18 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import {useEffect} from 'react';
+import { useEffect, useState } from "react";
+import "./App.css";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
 
 function App() {
-
-  const [greeting ,setGreeting] = useState('')
+  const [greeting, setGreeting] = useState("");
 
   useEffect(() => {
-    fetch('/api')
-    .then(res=> res.text())
-    .then(text => setGreeting(text))
-  }, [])
+    fetch("/api")
+      .then((res) => res.text())
+      .then((text) => setGreeting(text));
+  }, []);
 
   return (
     <>
@@ -25,9 +23,8 @@ function App() {
         </a>
       </div>
       <h1>{greeting}</h1>
- 
     </>
-  )
+  );
 }
 
-export default App
+export default App;
